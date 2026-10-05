@@ -5,7 +5,7 @@ Public repository launched on **2026-10-05**. It contains three source-checked e
 ## Verified
 
 - Local directory validation, reproducible generation and **25 tests** pass. Tests cover malformed records, unsafe markup, encoded credentials, untrusted commands, changed revisions, exact-commit merge/rejection, expired claims and maintainer boundaries. Dependency audit reported no vulnerabilities at launch.
-- [Hosted repository checks](https://github.com/yvlabs/scripture-for-everyone/actions/runs/37371748799) passed at commit `32bc1d4` (21 tests before the four claim tests were added). Later hosted checks remain separate evidence.
+- [Hosted repository checks](https://github.com/yvlabs/scripture-for-everyone/actions/runs/37372378581) passed all 25 tests and directory validation at commit `2b4d982`. Earlier run 37371748799 passed the prior 21-test revision.
 - [PR #6](https://github.com/yvlabs/scripture-for-everyone/pull/6) demonstrated a real GitHub data contribution: stale approval was ignored, fresh content review was recorded, and the controller merged exact reviewed head `d7183e2` as `abb3a7e`.
 - [PR #7](https://github.com/yvlabs/scripture-for-everyone/pull/7) demonstrated invalid-data rejection and closure without a merge.
 - Those PR rehearsals ran through the actual controller from a supervised local session using the independent operator. They do **not** prove hosted token permissions, external contributor adoption or unattended AI review.
@@ -15,7 +15,7 @@ Public repository launched on **2026-10-05**. It contains three source-checked e
 
 Semantic central-agent review runs in supervised sessions. The public queue is included in the operator’s existing portfolio-review loop. No hosted model login or unattended semantic-review service is configured.
 
-The Actions intake is available on PR events and manual dispatch. **Six-hour scheduling is not enabled yet.** GitHub’s [Actions runner-assignment incident](https://www.githubstatus.com/) delayed launch verification. The [manual failure drill](https://github.com/yvlabs/scripture-for-everyone/actions/runs/37372060201) and its incident/recovery path must complete before scheduled activation. Do not interpret queued runs or a workflow file as operational proof.
+The Actions intake is available on PR events and manual dispatch. **Six-hour scheduling is not enabled yet.** GitHub’s [Actions runner-assignment incident](https://www.githubstatus.com/) delayed launch verification. The [manual failure drill](https://github.com/yvlabs/scripture-for-everyone/actions/runs/37372579944) and its incident/recovery path must complete before scheduled activation. Do not interpret queued runs or a workflow file as operational proof.
 
 Credentials are limited to the built-in repository GITHUB_TOKEN in Actions. There is no model account, Bible App Key, production credential, new paid service or cross-repository token. The local identity was used for supervised verification, not introduced as a hosted runtime dependency.
 
