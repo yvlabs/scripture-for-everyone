@@ -14,7 +14,7 @@ export function publicURL(value) {
     return u.protocol === 'https:' && !u.username && !u.password && (!u.port || u.port === '443') &&
       !net.isIP(u.hostname.replace(/^\[|\]$/g, '')) && /^[a-z0-9](?:[a-z0-9.-]*[a-z0-9])?\.[a-z]{2,63}$/i.test(u.hostname) &&
       !/(^|\.)(localhost|local|internal|test|invalid|example|onion)$/i.test(u.hostname) &&
-      !/[\x00-\x20\\]/.test(value) && !/[?&](?:token|key|app_key|access_token|signature)=/i.test(value);
+      !/[\x00-\x20\\<>]/.test(value) && !/[?&](?:token|key|app_key|access_token|signature)=/i.test(value);
   } catch { return false; }
 }
 export function validDate(s) {
@@ -44,6 +44,12 @@ export function validateEntries(entries, now = new Date().toISOString().slice(0,
     if (!/^(needs|efforts|tasks)\/(need|effort|task)-[a-z0-9]+(?:-[a-z0-9]+)*\.yaml$/.test(filename)) throw Error('invalid record path');
     checkText(source);
     const r = parseRecord(source);
+    const scan = value => {
+      if (typeof value === 'string') checkText(value);
+      else if (Array.isArray(value)) value.forEach(scan);
+      else if (value && typeof value === 'object') Object.values(value).forEach(scan);
+    };
+    scan(r);
     if (!validateSchema(r)) throw Error(`${filename}: record does not match schema (${validateSchema.errors.slice(0,3).map(e=>e.keyword).join(', ')})`);
     if (filename !== `${r.kind}s/${r.id}.yaml` || !r.id.startsWith(`${r.kind}-`)) throw Error('record path and ID do not agree');
     if (ids.has(r.id)) throw Error('duplicate ID');
