@@ -1,0 +1,4 @@
+# Deliberately invalid maintainer-run verification fixture. Never merge.
+kind: need
+id: need-verification-reject
+summary: Synthetic spam/invalid-entry rehearsal, not a real audience claim.
