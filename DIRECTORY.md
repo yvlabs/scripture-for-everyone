@@ -68,28 +68,28 @@ Status: **live** · cataloged · source-checked · last reviewed 2026-10-05.
 
 A bounded starter contribution; current progress and claims live in the linked GitHub issue\.
 
-[Record](tasks/task-audit-roblox-guide.yaml)
+[Record](tasks/task-audit-roblox-guide.yaml) · [Work on this task](https://github.com/yvlabs/scripture-for-everyone/issues/1)
 
 ### Catalog an existing Scripture effort
 
 A bounded starter contribution; current progress and claims live in the linked GitHub issue\.
 
-[Record](tasks/task-catalog-existing-effort.yaml)
+[Record](tasks/task-catalog-existing-effort.yaml) · [Work on this task](https://github.com/yvlabs/scripture-for-everyone/issues/2)
 
 ### Investigate screen\-reader navigation
 
 A bounded starter contribution; current progress and claims live in the linked GitHub issue\.
 
-[Record](tasks/task-compare-screen-readers.yaml)
+[Record](tasks/task-compare-screen-readers.yaml) · [Work on this task](https://github.com/yvlabs/scripture-for-everyone/issues/3)
 
 ### Investigate reading contexts in Mexico
 
 A bounded starter contribution; current progress and claims live in the linked GitHub issue\.
 
-[Record](tasks/task-research-mexico-contexts.yaml)
+[Record](tasks/task-research-mexico-contexts.yaml) · [Work on this task](https://github.com/yvlabs/scripture-for-everyone/issues/4)
 
 ### Review the directory record contract
 
 A bounded starter contribution; current progress and claims live in the linked GitHub issue\.
 
-[Record](tasks/task-review-record-contract.yaml)
+[Record](tasks/task-review-record-contract.yaml) · [Work on this task](https://github.com/yvlabs/scripture-for-everyone/issues/5)
