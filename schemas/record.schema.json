@@ -1,0 +1,568 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Scripture for Everyone record v1",
+  "oneOf": [
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "id",
+        "kind",
+        "name",
+        "summary",
+        "last_reviewed",
+        "evidence",
+        "unknowns",
+        "audience",
+        "status",
+        "alternatives",
+        "efforts",
+        "research_question"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": 1
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^(need|effort|task)-[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "kind": {
+          "const": "need"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "last_reviewed": {
+          "type": "string",
+          "format": "date"
+        },
+        "evidence": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 15,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "url",
+              "observed",
+              "claim",
+              "limits"
+            ],
+            "properties": {
+              "url": {
+                "type": "string",
+                "format": "public-url",
+                "maxLength": 1000
+              },
+              "observed": {
+                "type": "string",
+                "format": "date"
+              },
+              "claim": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 2000
+              },
+              "limits": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 2000
+              }
+            }
+          }
+        },
+        "unknowns": {
+          "type": "array",
+          "maxItems": 20,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          }
+        },
+        "audience": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "description",
+            "languages",
+            "regions",
+            "age",
+            "accessibility",
+            "connectivity",
+            "devices"
+          ],
+          "properties": {
+            "description": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2000
+            },
+            "languages": {
+              "type": "array",
+              "maxItems": 20,
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160
+              }
+            },
+            "regions": {
+              "type": "array",
+              "maxItems": 20,
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160
+              }
+            },
+            "age": {
+              "type": "array",
+              "maxItems": 20,
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160
+              }
+            },
+            "accessibility": {
+              "type": "array",
+              "maxItems": 20,
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160
+              }
+            },
+            "connectivity": {
+              "type": "array",
+              "maxItems": 20,
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160
+              }
+            },
+            "devices": {
+              "type": "array",
+              "maxItems": 20,
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160
+              }
+            }
+          }
+        },
+        "status": {
+          "enum": [
+            "suspected",
+            "documented",
+            "partly-addressed",
+            "no-current-gap-evidence"
+          ]
+        },
+        "alternatives": {
+          "type": "array",
+          "maxItems": 20,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          }
+        },
+        "efforts": {
+          "type": "array",
+          "uniqueItems": true,
+          "maxItems": 30,
+          "items": {
+            "type": "string",
+            "pattern": "^(need|effort|task)-[a-z0-9]+(?:-[a-z0-9]+)*$"
+          }
+        },
+        "research_question": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "id",
+        "kind",
+        "name",
+        "summary",
+        "last_reviewed",
+        "evidence",
+        "unknowns",
+        "relationship",
+        "operator",
+        "contact",
+        "url",
+        "source_url",
+        "status",
+        "needs",
+        "surfaces",
+        "languages",
+        "user_cost",
+        "scripture_provider",
+        "rights_status",
+        "accessibility",
+        "evidence_level",
+        "maintenance"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": 1
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^(need|effort|task)-[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "kind": {
+          "const": "effort"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "last_reviewed": {
+          "type": "string",
+          "format": "date"
+        },
+        "evidence": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 15,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "url",
+              "observed",
+              "claim",
+              "limits"
+            ],
+            "properties": {
+              "url": {
+                "type": "string",
+                "format": "public-url",
+                "maxLength": 1000
+              },
+              "observed": {
+                "type": "string",
+                "format": "date"
+              },
+              "claim": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 2000
+              },
+              "limits": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 2000
+              }
+            }
+          }
+        },
+        "unknowns": {
+          "type": "array",
+          "maxItems": 20,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          }
+        },
+        "relationship": {
+          "enum": [
+            "cataloged",
+            "participating"
+          ]
+        },
+        "operator": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160
+        },
+        "contact": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "public-url",
+              "maxLength": 1000
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "url": {
+          "type": "string",
+          "format": "public-url",
+          "maxLength": 1000
+        },
+        "source_url": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "public-url",
+              "maxLength": 1000
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "status": {
+          "enum": [
+            "proposed",
+            "building",
+            "live",
+            "paused",
+            "retired"
+          ]
+        },
+        "needs": {
+          "type": "array",
+          "uniqueItems": true,
+          "maxItems": 30,
+          "items": {
+            "type": "string",
+            "pattern": "^(need|effort|task)-[a-z0-9]+(?:-[a-z0-9]+)*$"
+          }
+        },
+        "surfaces": {
+          "type": "array",
+          "maxItems": 20,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          }
+        },
+        "languages": {
+          "type": "array",
+          "maxItems": 20,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          }
+        },
+        "user_cost": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "scripture_provider": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160
+        },
+        "rights_status": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "accessibility": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "evidence_level": {
+          "enum": [
+            "submitted-claim",
+            "source-checked",
+            "functionally-checked"
+          ]
+        },
+        "maintenance": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "id",
+        "kind",
+        "name",
+        "summary",
+        "last_reviewed",
+        "evidence",
+        "unknowns",
+        "related",
+        "deliverable",
+        "acceptance",
+        "skills",
+        "access",
+        "estimate",
+        "issue"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": 1
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^(need|effort|task)-[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "kind": {
+          "const": "task"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "last_reviewed": {
+          "type": "string",
+          "format": "date"
+        },
+        "evidence": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 15,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "url",
+              "observed",
+              "claim",
+              "limits"
+            ],
+            "properties": {
+              "url": {
+                "type": "string",
+                "format": "public-url",
+                "maxLength": 1000
+              },
+              "observed": {
+                "type": "string",
+                "format": "date"
+              },
+              "claim": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 2000
+              },
+              "limits": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 2000
+              }
+            }
+          }
+        },
+        "unknowns": {
+          "type": "array",
+          "maxItems": 20,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          }
+        },
+        "related": {
+          "type": "array",
+          "uniqueItems": true,
+          "maxItems": 30,
+          "items": {
+            "type": "string",
+            "pattern": "^(need|effort|task)-[a-z0-9]+(?:-[a-z0-9]+)*$"
+          }
+        },
+        "deliverable": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "acceptance": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 10,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          }
+        },
+        "skills": {
+          "type": "array",
+          "maxItems": 20,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          }
+        },
+        "access": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "estimate": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160
+        },
+        "issue": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^https://github.com/yvlabs/scripture-for-everyone/issues/[1-9][0-9]*$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+Original directory descriptions and documentation are licensed under the
+Creative Commons Attribution 4.0 International License (CC BY 4.0).
+
+Copyright (c) 2026 Bibleinator Labs and contributors.
+
+License: https://creativecommons.org/licenses/by/4.0/
+Legal code: https://creativecommons.org/licenses/by/4.0/legalcode
+
+This applies to original README/guide/policy/example prose, YAML descriptions
+and generated directory content. Original software (scripts, tests, schemas,
+package metadata and workflow configuration) is licensed under LICENSE (MIT).
+Third-party Scripture, trademarks, products and linked materials retain their
+own rights and are not relicensed by this repository. No Scripture license is
+granted. Preserve credit, a license link and an indication of changes when
+reusing covered content.

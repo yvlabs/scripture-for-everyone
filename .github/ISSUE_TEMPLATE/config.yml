@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Sensitive security or safeguarding report
+    url: https://github.com/yvlabs/scripture-for-everyone/blob/main/SECURITY.md
+    about: Do not disclose secrets or identifying reader information in public issues.

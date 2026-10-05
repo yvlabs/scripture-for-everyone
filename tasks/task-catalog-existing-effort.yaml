@@ -1,0 +1,25 @@
+schema_version: 1
+id: task-catalog-existing-effort
+kind: task
+name: Catalog an existing Scripture effort
+summary: A bounded starter contribution; current progress and claims live in the linked GitHub issue.
+last_reviewed: 2026-10-05
+evidence:
+  - url: https://github.com/yvlabs/scripture-for-everyone
+    observed: 2026-10-05
+    claim: Starting point for investigation.
+    limits: The task is proposed work, not a completed result.
+unknowns:
+  - No contributor assigned by this record.
+related: []
+deliverable: Add one independently sourced effort that helps people access Bible text and is not already listed.
+acceptance:
+  - Identify the official source and accountable operator if public.
+  - Distinguish product claims from functional verification.
+  - Search for duplicates and report uncertainty and rights status.
+skills:
+  - research
+access: Public information only; any local software/device use requires the contributor operator’s
+  authorization.
+estimate: One focused session; stop and report access limits.
+issue: null

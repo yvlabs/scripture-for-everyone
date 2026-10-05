@@ -1,0 +1,60 @@
+name: Central intake
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened, ready_for_review]
+  workflow_dispatch:
+    inputs:
+      drill:
+        description: 'Deliberately fail to test incident delivery'
+        type: boolean
+        default: false
+permissions: {}
+concurrency:
+  group: central-intake
+  cancel-in-progress: false
+jobs:
+  review:
+    if: github.event_name != 'pull_request_target' || github.event.pull_request.base.ref == 'main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+      statuses: write
+    steps:
+      # Always trusted main; never check out or execute a PR head.
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          ref: main
+          persist-credentials: false
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+        with:
+          node-version: '24'
+      - run: npm ci --ignore-scripts --no-fund
+      - name: Validate and process the queue
+        run: node scripts/review.mjs --apply
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+      - name: Planned alert drill
+        if: inputs.drill == true
+        run: exit 1
+  incident:
+    needs: review
+    if: always() && needs.review.result != 'skipped'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 3
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          ref: main
+          persist-credentials: false
+      - run: node scripts/incident.mjs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          REVIEW_RESULT: ${{ needs.review.result }}
+          DRILL: ${{ inputs.drill }}

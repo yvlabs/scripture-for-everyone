@@ -1,0 +1,32 @@
+schema_version: 1
+id: effort-roblox-example
+kind: effort
+name: YouVersion Platform Roblox example
+summary: A reusable public example for a Verse of the Day board and interactive Bible reader in Roblox.
+last_reviewed: 2026-10-05
+evidence:
+  - url: https://github.com/yvlabs/yvp-roblox-scripture-example
+    observed: 2026-10-05
+    claim: The public repository provides an MIT-licensed integration example and setup instructions.
+    limits: Source availability verified; this listing does not claim production acceptance or
+      demographic reach.
+unknowns:
+  - Audience-specific outcomes have not been verified.
+relationship: participating
+operator: Bibleinator Labs
+contact: https://github.com/yvlabs/yvp-roblox-scripture-example/issues
+url: https://github.com/yvlabs/yvp-roblox-scripture-example
+source_url: https://github.com/yvlabs/yvp-roblox-scripture-example
+status: live
+needs:
+  - need-unexpected-surfaces
+surfaces:
+  - Roblox
+  - developer example
+languages: []
+user_cost: Example source is free; operators own hosting and platform costs.
+scripture_provider: YouVersion Platform
+rights_status: App-specific grants not inspected for this listing. A directory entry grants no reuse rights.
+accessibility: Unverified; audio availability is not proof of screen-reader accessibility.
+evidence_level: source-checked
+maintenance: Bibleinator Labs maintains the public example; improvements are welcome.

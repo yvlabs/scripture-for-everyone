@@ -1,0 +1,18 @@
+name: Correct a listing
+description: Report a factual mistake, stale entry or unsupported claim
+title: "[Correction] "
+labels: [correction]
+body:
+  - type: input
+    id: record
+    attributes:
+      label: Record ID or URL
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: What should change and what supports it?
+      description: Include public evidence and limitations. Sensitive reports go to the contact in SECURITY.md.
+    validations:
+      required: true

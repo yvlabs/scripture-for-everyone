@@ -1,0 +1,28 @@
+schema_version: 1
+id: task-research-mexico-contexts
+kind: task
+name: Investigate reading contexts in Mexico
+summary: A bounded starter contribution; current progress and claims live in the linked GitHub issue.
+last_reviewed: 2026-10-05
+evidence:
+  - url: https://www.bible.com/app
+    observed: 2026-10-05
+    claim: Starting point for investigation.
+    limits: The task is proposed work, not a completed result.
+unknowns:
+  - No contributor assigned by this record.
+related:
+  - need-mexico-young-men
+deliverable: Find credible public evidence about concrete reading/access contexts and existing
+  alternatives; narrow or retire the hypothesis.
+acceptance:
+  - Cite primary sources, observation dates and limitations.
+  - Avoid inferring language, beliefs or preferences from geography or gender.
+  - Propose a bounded next task only if the evidence supports it.
+skills:
+  - research
+  - Spanish helpful but not assumed
+access: Public information only; any local software/device use requires the contributor operator’s
+  authorization.
+estimate: One focused session; stop and report access limits.
+issue: null

@@ -1,0 +1,33 @@
+schema_version: 1
+id: need-synthetic-example
+kind: need
+name: Synthetic example — replace before submitting
+summary: Children who may use screen readers to find and hear Scripture. A research question, not a
+  claim that existing apps fail.
+last_reviewed: 2026-10-05
+evidence:
+  - url: https://www.bible.com/app
+    observed: 2026-10-05
+    claim: A general-purpose free Bible reader exists and must be considered as an alternative.
+    limits: Does not establish an unmet audience need or prove accessibility, cultural fit, distribution
+      or use.
+unknowns:
+  - No population-wide gap established.
+  - No recruited community validation claimed.
+audience:
+  description: Children who may use screen readers to find and hear Scripture. A research question,
+    not a claim that existing apps fail.
+  languages: []
+  regions: []
+  age:
+    - children; exact ages not yet selected
+  accessibility:
+    - screen-reader navigation; needs investigation
+  connectivity: []
+  devices: []
+status: suspected
+alternatives:
+  - Investigate existing readers before proposing new software.
+efforts: []
+research_question: Can existing readers support independent book, chapter and passage navigation
+  with screen readers in a child-appropriate reading context?

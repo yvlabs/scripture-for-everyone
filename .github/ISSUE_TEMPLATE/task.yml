@@ -1,0 +1,26 @@
+name: Propose useful work
+description: A bounded contribution to Scripture access
+title: "[Task] "
+labels: [task]
+body:
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Useful outcome
+      description: What will change for an existing effort or a specific access question?
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Existing work and evidence
+      description: Link relevant records, alternatives and public sources. Identify uncertainty.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Deliverable and acceptance
+      description: State a bounded result, how it can be checked, required skills and access limits.
+    validations:
+      required: true

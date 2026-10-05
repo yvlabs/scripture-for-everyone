@@ -1,0 +1,35 @@
+schema_version: 1
+id: need-mexico-young-men
+kind: need
+name: Reading contexts for young men in Mexico
+summary: An audience research prompt. Language, age boundaries, devices, preferences and unmet needs
+  have not been established.
+last_reviewed: 2026-10-05
+evidence:
+  - url: https://www.bible.com/app
+    observed: 2026-10-05
+    claim: A general-purpose free Bible reader exists and must be considered as an alternative.
+    limits: Does not establish an unmet audience need or prove accessibility, cultural fit, distribution
+      or use.
+unknowns:
+  - No population-wide gap established.
+  - No recruited community validation claimed.
+audience:
+  description: An audience research prompt. Language, age boundaries, devices, preferences and unmet
+    needs have not been established.
+  languages: []
+  regions:
+    - Mexico; no uniform audience assumed
+  age:
+    - young men; age range not yet defined
+  accessibility: []
+  connectivity: []
+  devices: []
+status: suspected
+alternatives:
+  - Investigate existing readers before proposing new software.
+efforts:
+  - effort-youversion-bible-app
+  - effort-hosanna-audio-bible
+research_question: Which concrete reading situations, if any, are poorly served by existing freely
+  available Bible experiences for young men in Mexico?

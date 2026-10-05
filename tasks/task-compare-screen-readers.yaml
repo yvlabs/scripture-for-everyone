@@ -1,0 +1,30 @@
+schema_version: 1
+id: task-compare-screen-readers
+kind: task
+name: Investigate screen-reader navigation
+summary: A bounded starter contribution; current progress and claims live in the linked GitHub issue.
+last_reviewed: 2026-10-05
+evidence:
+  - url: https://www.bible.com/app
+    observed: 2026-10-05
+    claim: Starting point for investigation.
+    limits: The task is proposed work, not a completed result.
+unknowns:
+  - No contributor assigned by this record.
+related:
+  - need-screen-reader-navigation
+  - effort-youversion-bible-app
+  - effort-hosanna-audio-bible
+deliverable: Compare book/chapter navigation and audio controls in existing readers using available
+  accessibility tooling.
+acceptance:
+  - Record app version, device, assistive technology and tested actions.
+  - Describe observed barriers and successful alternatives.
+  - Do not infer children’s preferences or contact children.
+skills:
+  - accessibility
+  - research
+access: Public information only; any local software/device use requires the contributor operator’s
+  authorization.
+estimate: One focused session; stop and report access limits.
+issue: null

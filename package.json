@@ -1,0 +1,20 @@
+{
+  "name": "scripture-for-everyone",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "validate": "node scripts/directory.mjs check",
+    "generate": "node scripts/directory.mjs generate",
+    "test": "node --test",
+    "review": "node scripts/review.mjs",
+    "freshness": "node scripts/freshness.mjs"
+  },
+  "dependencies": {
+    "ajv": "8.20.0",
+    "yaml": "2.9.1"
+  }
+}

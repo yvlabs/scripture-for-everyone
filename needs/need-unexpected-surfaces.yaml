@@ -1,0 +1,31 @@
+schema_version: 1
+id: need-unexpected-surfaces
+kind: need
+name: Faithful Scripture access on additional surfaces
+summary: Developers exploring Scripture access in games and other everyday surfaces. Existing
+  examples are a starting point, not evidence of audience demand.
+last_reviewed: 2026-10-05
+evidence:
+  - url: https://github.com/yvlabs/yvp-roblox-scripture-example
+    observed: 2026-10-05
+    claim: An existing public Scripture integration is available for comparison.
+    limits: Does not establish an unmet audience need or prove accessibility, cultural fit, distribution
+      or use.
+unknowns:
+  - No population-wide gap established.
+  - No recruited community validation claimed.
+audience:
+  description: Developers exploring Scripture access in games and other everyday surfaces. Existing
+    examples are a starting point, not evidence of audience demand.
+  languages: []
+  regions: []
+  age: []
+  accessibility: []
+  connectivity: []
+  devices: []
+status: suspected
+alternatives:
+  - Investigate existing readers before proposing new software.
+efforts:
+  - effort-roblox-example
+research_question: Which existing public integrations can be improved or reused before another application is created?

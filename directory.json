@@ -1,0 +1,417 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "schema_version": 1,
+      "id": "effort-hosanna-audio-bible",
+      "kind": "effort",
+      "name": "Hosanna Audio Bible (Bible.is)",
+      "summary": "An existing audio Bible experience from Faith Comes By Hearing; a candidate alternative for listening contexts.",
+      "last_reviewed": "2026-10-05",
+      "evidence": [
+        {
+          "url": "https://www.faithcomesbyhearing.com/audio-bible-resources/bible-is",
+          "observed": "2026-10-05",
+          "claim": "The official page calls the product Hosanna and describes free audio and offline listening.",
+          "limits": "Public descriptions only; no independent accessibility test, translation rights review or child-specific assessment."
+        }
+      ],
+      "unknowns": [
+        "Audience-specific outcomes have not been verified."
+      ],
+      "relationship": "cataloged",
+      "operator": "Faith Comes By Hearing",
+      "contact": "https://www.faithcomesbyhearing.com/audio-bible-resources/bible-is",
+      "url": "https://www.faithcomesbyhearing.com/audio-bible-resources/bible-is",
+      "source_url": null,
+      "status": "live",
+      "needs": [
+        "need-screen-reader-navigation",
+        "need-mexico-young-men"
+      ],
+      "surfaces": [
+        "mobile",
+        "web"
+      ],
+      "languages": [],
+      "user_cost": "Official site describes free use.",
+      "scripture_provider": "Faith Comes By Hearing",
+      "rights_status": "App-specific grants not inspected for this listing. A directory entry grants no reuse rights.",
+      "accessibility": "Unverified; audio availability is not proof of screen-reader accessibility.",
+      "evidence_level": "source-checked",
+      "maintenance": "Original operator owns support and upkeep."
+    },
+    {
+      "schema_version": 1,
+      "id": "effort-roblox-example",
+      "kind": "effort",
+      "name": "YouVersion Platform Roblox example",
+      "summary": "A reusable public example for a Verse of the Day board and interactive Bible reader in Roblox.",
+      "last_reviewed": "2026-10-05",
+      "evidence": [
+        {
+          "url": "https://github.com/yvlabs/yvp-roblox-scripture-example",
+          "observed": "2026-10-05",
+          "claim": "The public repository provides an MIT-licensed integration example and setup instructions.",
+          "limits": "Source availability verified; this listing does not claim production acceptance or demographic reach."
+        }
+      ],
+      "unknowns": [
+        "Audience-specific outcomes have not been verified."
+      ],
+      "relationship": "participating",
+      "operator": "Bibleinator Labs",
+      "contact": "https://github.com/yvlabs/yvp-roblox-scripture-example/issues",
+      "url": "https://github.com/yvlabs/yvp-roblox-scripture-example",
+      "source_url": "https://github.com/yvlabs/yvp-roblox-scripture-example",
+      "status": "live",
+      "needs": [
+        "need-unexpected-surfaces"
+      ],
+      "surfaces": [
+        "Roblox",
+        "developer example"
+      ],
+      "languages": [],
+      "user_cost": "Example source is free; operators own hosting and platform costs.",
+      "scripture_provider": "YouVersion Platform",
+      "rights_status": "App-specific grants not inspected for this listing. A directory entry grants no reuse rights.",
+      "accessibility": "Unverified; audio availability is not proof of screen-reader accessibility.",
+      "evidence_level": "source-checked",
+      "maintenance": "Bibleinator Labs maintains the public example; improvements are welcome."
+    },
+    {
+      "schema_version": 1,
+      "id": "effort-youversion-bible-app",
+      "kind": "effort",
+      "name": "YouVersion Bible App",
+      "summary": "An existing Bible reading app with text and audio; cataloged as an alternative to evaluate.",
+      "last_reviewed": "2026-10-05",
+      "evidence": [
+        {
+          "url": "https://www.bible.com/app",
+          "observed": "2026-10-05",
+          "claim": "The official page advertises Bible reading and audio with no ads or purchases.",
+          "limits": "Official product claims only; no screen-reader, child-safety, regional or runtime assessment."
+        }
+      ],
+      "unknowns": [
+        "Audience-specific outcomes have not been verified."
+      ],
+      "relationship": "cataloged",
+      "operator": "YouVersion",
+      "contact": "https://www.bible.com/app",
+      "url": "https://www.bible.com/app",
+      "source_url": null,
+      "status": "live",
+      "needs": [
+        "need-screen-reader-navigation",
+        "need-mexico-young-men"
+      ],
+      "surfaces": [
+        "mobile"
+      ],
+      "languages": [],
+      "user_cost": "Official site describes free use.",
+      "scripture_provider": "YouVersion",
+      "rights_status": "App-specific grants not inspected for this listing. A directory entry grants no reuse rights.",
+      "accessibility": "Unverified; audio availability is not proof of screen-reader accessibility.",
+      "evidence_level": "source-checked",
+      "maintenance": "Original operator owns support and upkeep."
+    },
+    {
+      "schema_version": 1,
+      "id": "need-mexico-young-men",
+      "kind": "need",
+      "name": "Reading contexts for young men in Mexico",
+      "summary": "An audience research prompt. Language, age boundaries, devices, preferences and unmet needs have not been established.",
+      "last_reviewed": "2026-10-05",
+      "evidence": [
+        {
+          "url": "https://www.bible.com/app",
+          "observed": "2026-10-05",
+          "claim": "A general-purpose free Bible reader exists and must be considered as an alternative.",
+          "limits": "Does not establish an unmet audience need or prove accessibility, cultural fit, distribution or use."
+        }
+      ],
+      "unknowns": [
+        "No population-wide gap established.",
+        "No recruited community validation claimed."
+      ],
+      "audience": {
+        "description": "An audience research prompt. Language, age boundaries, devices, preferences and unmet needs have not been established.",
+        "languages": [],
+        "regions": [
+          "Mexico; no uniform audience assumed"
+        ],
+        "age": [
+          "young men; age range not yet defined"
+        ],
+        "accessibility": [],
+        "connectivity": [],
+        "devices": []
+      },
+      "status": "suspected",
+      "alternatives": [
+        "Investigate existing readers before proposing new software."
+      ],
+      "efforts": [
+        "effort-youversion-bible-app",
+        "effort-hosanna-audio-bible"
+      ],
+      "research_question": "Which concrete reading situations, if any, are poorly served by existing freely available Bible experiences for young men in Mexico?"
+    },
+    {
+      "schema_version": 1,
+      "id": "need-screen-reader-navigation",
+      "kind": "need",
+      "name": "Independent Scripture navigation for blind children",
+      "summary": "Children who may use screen readers to find and hear Scripture. A research question, not a claim that existing apps fail.",
+      "last_reviewed": "2026-10-05",
+      "evidence": [
+        {
+          "url": "https://www.bible.com/app",
+          "observed": "2026-10-05",
+          "claim": "A general-purpose free Bible reader exists and must be considered as an alternative.",
+          "limits": "Does not establish an unmet audience need or prove accessibility, cultural fit, distribution or use."
+        }
+      ],
+      "unknowns": [
+        "No population-wide gap established.",
+        "No recruited community validation claimed."
+      ],
+      "audience": {
+        "description": "Children who may use screen readers to find and hear Scripture. A research question, not a claim that existing apps fail.",
+        "languages": [],
+        "regions": [],
+        "age": [
+          "children; exact ages not yet selected"
+        ],
+        "accessibility": [
+          "screen-reader navigation; needs investigation"
+        ],
+        "connectivity": [],
+        "devices": []
+      },
+      "status": "suspected",
+      "alternatives": [
+        "Investigate existing readers before proposing new software."
+      ],
+      "efforts": [
+        "effort-youversion-bible-app",
+        "effort-hosanna-audio-bible"
+      ],
+      "research_question": "Can existing readers support independent book, chapter and passage navigation with screen readers in a child-appropriate reading context?"
+    },
+    {
+      "schema_version": 1,
+      "id": "need-unexpected-surfaces",
+      "kind": "need",
+      "name": "Faithful Scripture access on additional surfaces",
+      "summary": "Developers exploring Scripture access in games and other everyday surfaces. Existing examples are a starting point, not evidence of audience demand.",
+      "last_reviewed": "2026-10-05",
+      "evidence": [
+        {
+          "url": "https://github.com/yvlabs/yvp-roblox-scripture-example",
+          "observed": "2026-10-05",
+          "claim": "An existing public Scripture integration is available for comparison.",
+          "limits": "Does not establish an unmet audience need or prove accessibility, cultural fit, distribution or use."
+        }
+      ],
+      "unknowns": [
+        "No population-wide gap established.",
+        "No recruited community validation claimed."
+      ],
+      "audience": {
+        "description": "Developers exploring Scripture access in games and other everyday surfaces. Existing examples are a starting point, not evidence of audience demand.",
+        "languages": [],
+        "regions": [],
+        "age": [],
+        "accessibility": [],
+        "connectivity": [],
+        "devices": []
+      },
+      "status": "suspected",
+      "alternatives": [
+        "Investigate existing readers before proposing new software."
+      ],
+      "efforts": [
+        "effort-roblox-example"
+      ],
+      "research_question": "Which existing public integrations can be improved or reused before another application is created?"
+    },
+    {
+      "schema_version": 1,
+      "id": "task-audit-roblox-guide",
+      "kind": "task",
+      "name": "Audit the public Roblox integration guide",
+      "summary": "A bounded starter contribution; current progress and claims live in the linked GitHub issue.",
+      "last_reviewed": "2026-10-05",
+      "evidence": [
+        {
+          "url": "https://github.com/yvlabs/yvp-roblox-scripture-example",
+          "observed": "2026-10-05",
+          "claim": "Starting point for investigation.",
+          "limits": "The task is proposed work, not a completed result."
+        }
+      ],
+      "unknowns": [
+        "No contributor assigned by this record."
+      ],
+      "related": [
+        "need-unexpected-surfaces",
+        "effort-roblox-example"
+      ],
+      "deliverable": "Review the public setup instructions for a new independent developer. Propose specific, reproducible corrections.",
+      "acceptance": [
+        "Record the source commit and each checked step.",
+        "Separate tested behavior from documentation-only findings.",
+        "Do not include credentials or copy licensed Scripture."
+      ],
+      "skills": [
+        "Roblox",
+        "documentation"
+      ],
+      "access": "Public information only; any local software/device use requires the contributor operator’s authorization.",
+      "estimate": "One focused session; stop and report access limits.",
+      "issue": null
+    },
+    {
+      "schema_version": 1,
+      "id": "task-catalog-existing-effort",
+      "kind": "task",
+      "name": "Catalog an existing Scripture effort",
+      "summary": "A bounded starter contribution; current progress and claims live in the linked GitHub issue.",
+      "last_reviewed": "2026-10-05",
+      "evidence": [
+        {
+          "url": "https://github.com/yvlabs/scripture-for-everyone",
+          "observed": "2026-10-05",
+          "claim": "Starting point for investigation.",
+          "limits": "The task is proposed work, not a completed result."
+        }
+      ],
+      "unknowns": [
+        "No contributor assigned by this record."
+      ],
+      "related": [],
+      "deliverable": "Add one independently sourced effort that helps people access Bible text and is not already listed.",
+      "acceptance": [
+        "Identify the official source and accountable operator if public.",
+        "Distinguish product claims from functional verification.",
+        "Search for duplicates and report uncertainty and rights status."
+      ],
+      "skills": [
+        "research"
+      ],
+      "access": "Public information only; any local software/device use requires the contributor operator’s authorization.",
+      "estimate": "One focused session; stop and report access limits.",
+      "issue": null
+    },
+    {
+      "schema_version": 1,
+      "id": "task-compare-screen-readers",
+      "kind": "task",
+      "name": "Investigate screen-reader navigation",
+      "summary": "A bounded starter contribution; current progress and claims live in the linked GitHub issue.",
+      "last_reviewed": "2026-10-05",
+      "evidence": [
+        {
+          "url": "https://www.bible.com/app",
+          "observed": "2026-10-05",
+          "claim": "Starting point for investigation.",
+          "limits": "The task is proposed work, not a completed result."
+        }
+      ],
+      "unknowns": [
+        "No contributor assigned by this record."
+      ],
+      "related": [
+        "need-screen-reader-navigation",
+        "effort-youversion-bible-app",
+        "effort-hosanna-audio-bible"
+      ],
+      "deliverable": "Compare book/chapter navigation and audio controls in existing readers using available accessibility tooling.",
+      "acceptance": [
+        "Record app version, device, assistive technology and tested actions.",
+        "Describe observed barriers and successful alternatives.",
+        "Do not infer children’s preferences or contact children."
+      ],
+      "skills": [
+        "accessibility",
+        "research"
+      ],
+      "access": "Public information only; any local software/device use requires the contributor operator’s authorization.",
+      "estimate": "One focused session; stop and report access limits.",
+      "issue": null
+    },
+    {
+      "schema_version": 1,
+      "id": "task-research-mexico-contexts",
+      "kind": "task",
+      "name": "Investigate reading contexts in Mexico",
+      "summary": "A bounded starter contribution; current progress and claims live in the linked GitHub issue.",
+      "last_reviewed": "2026-10-05",
+      "evidence": [
+        {
+          "url": "https://www.bible.com/app",
+          "observed": "2026-10-05",
+          "claim": "Starting point for investigation.",
+          "limits": "The task is proposed work, not a completed result."
+        }
+      ],
+      "unknowns": [
+        "No contributor assigned by this record."
+      ],
+      "related": [
+        "need-mexico-young-men"
+      ],
+      "deliverable": "Find credible public evidence about concrete reading/access contexts and existing alternatives; narrow or retire the hypothesis.",
+      "acceptance": [
+        "Cite primary sources, observation dates and limitations.",
+        "Avoid inferring language, beliefs or preferences from geography or gender.",
+        "Propose a bounded next task only if the evidence supports it."
+      ],
+      "skills": [
+        "research",
+        "Spanish helpful but not assumed"
+      ],
+      "access": "Public information only; any local software/device use requires the contributor operator’s authorization.",
+      "estimate": "One focused session; stop and report access limits.",
+      "issue": null
+    },
+    {
+      "schema_version": 1,
+      "id": "task-review-record-contract",
+      "kind": "task",
+      "name": "Review the directory record contract",
+      "summary": "A bounded starter contribution; current progress and claims live in the linked GitHub issue.",
+      "last_reviewed": "2026-10-05",
+      "evidence": [
+        {
+          "url": "https://github.com/yvlabs/scripture-for-everyone",
+          "observed": "2026-10-05",
+          "claim": "Starting point for investigation.",
+          "limits": "The task is proposed work, not a completed result."
+        }
+      ],
+      "unknowns": [
+        "No contributor assigned by this record."
+      ],
+      "related": [],
+      "deliverable": "Try the synthetic examples and propose a reproducible schema or contribution usability improvement.",
+      "acceptance": [
+        "Validate records and run tests.",
+        "Include a minimal counterexample for any proposed validation change.",
+        "Changes to reviewer code require separate maintainer review."
+      ],
+      "skills": [
+        "JSON Schema",
+        "Node.js"
+      ],
+      "access": "Public information only; any local software/device use requires the contributor operator’s authorization.",
+      "estimate": "One focused session; stop and report access limits.",
+      "issue": null
+    }
+  ]
+}
