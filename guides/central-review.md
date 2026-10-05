@@ -25,7 +25,7 @@ The owner may integrate accepted changes directly to main after appropriate isol
 
 ## Cadence and limits
 
-Intake processes up to 20 oldest open PRs per run and has a 30-minute runner cap. A draft is skipped. At weekly review, run `npm run freshness`, inspect stale task claims and safely verify external links in an appropriate browsing environment. The controller does not fetch external URLs or claim to have checked availability. Monthly, compare useful outcomes with queue and support burden.
+Intake processes up to 20 oldest open PRs per run and has a 30-minute runner cap. A draft is skipped. At weekly review, run `npm run freshness`, run `npm run claims` with an authorized token to inspect seven-day claims, and safely verify external links in an appropriate browsing environment. The controller does not fetch external URLs or claim to have checked availability. Monthly, compare useful outcomes with queue and support burden.
 
 For a read-only API review: set a narrowly scoped authorized GITHUB_TOKEN in your environment and run `npm run review`. Never paste it into a command, comment or record. `node scripts/review.mjs --apply` enables repository actions. Workflows use only their repository-scoped GITHUB_TOKEN.
 

@@ -2,28 +2,21 @@ schema_version: 1
 id: task-synthetic-example
 kind: task
 name: Synthetic example — replace before submitting
-summary: A bounded starter contribution; current progress and claims live in the
-  linked GitHub issue.
+summary: Synthetic teaching fixture only. Replace all example facts before submitting.
 last_reviewed: 2026-10-05
 evidence:
-  - url: https://github.com/yvlabs/yvp-roblox-scripture-example
+  - url: https://example.org/replace-me
     observed: 2026-10-05
-    claim: Starting point for investigation.
-    limits: The task is proposed work, not a completed result.
+    claim: Fictional source entry used to demonstrate the schema.
+    limits: Synthetic example; no observation, audience need or real project is asserted.
 unknowns:
-  - No contributor assigned by this record.
+  - Replace all example values with supported facts.
 related:
   - need-synthetic-example
-deliverable: Review the public setup instructions for a new independent
-  developer. Propose specific, reproducible corrections.
+deliverable: Replace with a bounded contribution.
 acceptance:
-  - Record the source commit and each checked step.
-  - Separate tested behavior from documentation-only findings.
-  - Do not include credentials or copy licensed Scripture.
-skills:
-  - Roblox
-  - documentation
-access: Public information only; any local software/device use requires the
-  contributor operator’s authorization.
-estimate: One focused session; stop and report access limits.
+  - Replace with independently checkable acceptance evidence.
+skills: []
+access: Public information only in this synthetic example.
+estimate: Choose a bounded session.
 issue: null

@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readEntries,validateEntries,parseRecord,generate,publicURL,validDate,checkText,verifyGenerated} from '../scripts/directory.mjs';
 const entries=readEntries();
 function mutate(fn){return entries.map(([name,src],i)=>{const r=parseRecord(src);if(i===0)fn(r);return [name,JSON.stringify(r)];});}
-test('seed records have consistent references and reproducible outputs',()=>{const r=validateEntries(entries,'2026-10-05');assert.deepEqual(new Set(r.map(r=>r.kind)),new Set(['need','effort','task']));assert.deepEqual(generate(r),generate([...r]));});
+test('seed records have consistent references and reproducible outputs',()=>{const r=validateEntries(entries);assert.deepEqual(new Set(r.map(r=>r.kind)),new Set(['need','effort','task']));assert.deepEqual(generate(r),generate([...r]));});
 test('unknown fields and mislabeled IDs fail closed',()=>{assert.throws(()=>validateEntries(mutate(r=>r.execute='evil')));assert.throws(()=>validateEntries(mutate(r=>r.id='need-another')));});
 test('reject duplicate YAML keys, tags and aliases',()=>{for(const s of ['id: one\nid: two','id: !custom test','id: &x hi\nname: *x'])assert.throws(()=>parseRecord(s));});
 test('reject oversized input and secret material',()=>{assert.throws(()=>parseRecord('a'.repeat(32769)));assert.throws(()=>checkText('ghp_'+'a'.repeat(36)));assert.throws(()=>checkText('-----BEGIN PRIVATE KEY-----'));});

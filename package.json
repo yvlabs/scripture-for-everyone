@@ -11,7 +11,8 @@
     "generate": "node scripts/directory.mjs generate",
     "test": "node --test",
     "review": "node scripts/review.mjs",
-    "freshness": "node scripts/freshness.mjs"
+    "freshness": "node scripts/freshness.mjs",
+    "claims": "node scripts/claims.mjs"
   },
   "dependencies": {
     "ajv": "8.20.0",

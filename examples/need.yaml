@@ -2,32 +2,26 @@ schema_version: 1
 id: need-synthetic-example
 kind: need
 name: Synthetic example — replace before submitting
-summary: Children who may use screen readers to find and hear Scripture. A research question, not a
-  claim that existing apps fail.
+summary: Synthetic teaching fixture only. Replace all example facts before submitting.
 last_reviewed: 2026-10-05
 evidence:
-  - url: https://www.bible.com/app
+  - url: https://example.org/replace-me
     observed: 2026-10-05
-    claim: A general-purpose free Bible reader exists and must be considered as an alternative.
-    limits: Does not establish an unmet audience need or prove accessibility, cultural fit, distribution
-      or use.
+    claim: Fictional source entry used to demonstrate the schema.
+    limits: Synthetic example; no observation, audience need or real project is asserted.
 unknowns:
-  - No population-wide gap established.
-  - No recruited community validation claimed.
+  - Replace all example values with supported facts.
 audience:
-  description: Children who may use screen readers to find and hear Scripture. A research question,
-    not a claim that existing apps fail.
+  description: Fictional reading context for demonstration.
   languages: []
   regions: []
-  age:
-    - children; exact ages not yet selected
-  accessibility:
-    - screen-reader navigation; needs investigation
+  age: []
+  accessibility: []
   connectivity: []
   devices: []
 status: suspected
 alternatives:
-  - Investigate existing readers before proposing new software.
-efforts: []
-research_question: Can existing readers support independent book, chapter and passage navigation
-  with screen readers in a child-appropriate reading context?
+  - Research actual alternatives.
+efforts:
+  - effort-synthetic-example
+research_question: What concrete access question should be investigated?
