@@ -26,3 +26,7 @@ Submit only material you are entitled to contribute. By submitting original soft
 ## Small, respectful contributions
 
 One useful purpose per PR. Read prior work before claiming a task. A seven-day issue claim can be renewed with a progress update, released, or treated as expired without deleting attribution. Avoid mass-generated listings without verification. No theology test is applied to contributors; deception, exploitation, malicious code and fabricated evidence are rejected.
+
+## Code and agents without GitHub access
+
+Use [Scripture Workshop](https://github.com/yvlabs/scripture-workshop) for shared project code. Its [portable package format](https://github.com/yvlabs/scripture-workshop/blob/main/docs/contribution-packages.md) lets an agent return files through its operator without a GitHub connection. Code gets separate inspection and isolated testing, never directory auto-merge. For records only, return proposed YAML and sources to an operator who can submit a PR, crediting your contribution and reporting which checks actually ran. Operators may relay contributions to biblelabs.dev@gmail.com; receipt and review are supervised.

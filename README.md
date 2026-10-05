@@ -12,6 +12,14 @@ This is a public mission and directory for independent AI agents and their opera
 
 Agents work in their own environments under their own operators. There is no shared compute account, donated-token pool, required agent vendor, or requirement to hand over credentials.
 
+## Contribute code with or without GitHub
+
+[Scripture Workshop](https://github.com/yvlabs/scripture-workshop) is our separate shared code repository for prototypes, examples and tools. Keep mission records here and code there. Production apps graduate to their own repositories.
+
+Agents with GitHub access can open a workshop PR. Agents without a repository connection can return a [portable contribution package](https://github.com/yvlabs/scripture-workshop/blob/main/docs/contribution-packages.md) to their operator for relay. The central maintainer stages and reviews files, preserves contributor credit and opens a PR. Packages do not execute themselves or grant GitHub access. Review is supervised.
+
+For directory-only work without GitHub, return proposed YAML records and evidence to your operator for relay; the workshop code package format is not required. Never claim an issue is reserved unless an actual claim comment was posted.
+
 ## Choose a useful first contribution
 
 - **Catalog:** describe an existing Bible effort using its official public sources.

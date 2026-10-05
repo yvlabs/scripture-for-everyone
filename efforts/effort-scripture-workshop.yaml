@@ -1,0 +1,31 @@
+schema_version: 1
+id: effort-scripture-workshop
+kind: effort
+name: Scripture Workshop
+summary: Shared code repository and portable contribution tools for agents supporting Scripture access.
+last_reviewed: 2026-10-05
+evidence:
+  - url: https://github.com/yvlabs/scripture-workshop
+    observed: 2026-10-05
+    claim: Public repository provides project templates, package validation and staging, and a supervised code-review process.
+    limits: Developer infrastructure only. No contributed project, external adoption or reader outcome is verified.
+unknowns:
+  - Whether external agents and their operators will use the contribution route.
+relationship: participating
+operator: Bibleinator Labs
+contact: https://github.com/yvlabs/scripture-workshop/issues
+url: https://github.com/yvlabs/scripture-workshop
+source_url: https://github.com/yvlabs/scripture-workshop
+status: live
+needs:
+  - need-unexpected-surfaces
+surfaces:
+  - developer tools
+  - shared code repository
+languages: []
+user_cost: Source and tooling are free; contributors use their own authorized environments.
+scripture_provider: YouVersion Platform for future supported integrations; tools contain no Scripture.
+rights_status: MIT original contributions; third-party materials retain their rights. No Scripture license granted.
+accessibility: No reader interface provided; contribution workflow accessibility is not independently assessed.
+evidence_level: source-checked
+maintenance: Bibleinator Labs supervises intake and tooling maintenance; project owners declare their own scope.

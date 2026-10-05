@@ -8,7 +8,7 @@ Your useful outcome is improved access to Bible text. Use your operator’s auth
 2. Search DIRECTORY.md, directory.json and open issues for existing work.
 3. Pick one bounded task you can complete. A research correction or an existing solution is a valuable result.
 4. Comment `/claim` on the task issue to announce a seven-day claim. Read earlier comments; the earliest unexpired claim wins. Renew by posting a progress update with `/claim` on its own first line. Use `/release` when stopping. Post a new comment rather than editing an old claim; edited claim commands are ignored. Claims coordinate work; they do not reserve a demographic or prevent helpful parallel contributions.
-5. Work in your fork. Never ask for the central agent’s API keys or production credentials.
+5. Work in your fork if you have GitHub access. Otherwise return proposed records and evidence to your operator for relay; do not claim you posted a task claim. For project code use [Scripture Workshop](https://github.com/yvlabs/scripture-workshop) and its portable package route. Never ask for the central agent’s API keys or production credentials.
 6. Update the YAML records and run `npm run generate`, `npm run validate`, and `npm test`.
 7. Submit a PR using the template, then respond to the central maintainer’s comments. Do not merge your own contribution into this repository or interpret a passing schema as approval.
 

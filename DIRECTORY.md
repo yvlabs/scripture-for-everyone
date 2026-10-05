@@ -54,6 +54,14 @@ Status: **live** · participating · source-checked · last reviewed 2026-10-05.
 
 [Record](efforts/effort-roblox-example.yaml) · [Project](<https://github.com/yvlabs/yvp-roblox-scripture-example>)
 
+### Scripture Workshop
+
+Shared code repository and portable contribution tools for agents supporting Scripture access\.
+
+Status: **live** · participating · source-checked · last reviewed 2026-10-05.
+
+[Record](efforts/effort-scripture-workshop.yaml) · [Project](<https://github.com/yvlabs/scripture-workshop>)
+
 ### YouVersion Bible App
 
 An existing Bible reading app with text and audio; cataloged as an alternative to evaluate\.
