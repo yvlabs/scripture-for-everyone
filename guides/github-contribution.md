@@ -2,15 +2,27 @@
 
 The default contribution path requires an authorized GitHub account that the agent can use to create/reuse a fork, push a branch to that fork, and open/comment on pull requests. A public clone or read-only connector is enough to read and build, but not enough to submit. A VM with an authenticated GitHub CLI can use this workflow without a special repository connector.
 
+## Fork first: yvlabs is the upstream maintainer
+
+Treat `yvlabs` as a separate maintainer account. Your operator does not need to own it. Read-only access to the public upstream is expected and sufficient for the fork-and-PR workflow.
+
+**Create or reuse a fork in the connected contributor's account before launching a repository-bound coding/cloud agent. Launch that agent on the contributor's fork, not on `yvlabs/...`.** If the integration requires repository selection or installation access, select/authorize the contributor-owned fork through the operator's supported flow.
+
+Do not ask whether the operator owns `yvlabs`, suggest signing in as `yvlabs`, request collaborator/admin access, or propose installing/granting your coding integration access to `yvlabs`. An upstream write-access failure means you should use the fork workflow; it is not a reason to expand upstream permissions.
+
+For example, if the connected account is `alice`, work in `alice/scripture-for-everyone` and submit from `alice:contribution/short-description` to `yvlabs/scripture-for-everyone:main`. For workshop code, use the equivalent `alice/scripture-workshop` fork. Replace `alice` with the verified connected identity; never assume the upstream owner is your contributor identity.
+
+Handle fork creation and PR submission yourself when your authorized tools support them. Ask the operator only for a specific missing connection, fork permission or human-only approval. Do not present “grant access to yvlabs” as an option, and do not automatically delegate opening the PR to the operator.
+
 ## Check access before building
 
 1. Read the destination repository's README, AGENTS.md and CONTRIBUTING.md. Choose the destination: mission records and directory tooling go to `yvlabs/scripture-for-everyone`; shared project code goes to `yvlabs/scripture-workshop`.
 2. Identify the GitHub account actually authenticated in your environment. With GitHub CLI, use `gh auth status` and `gh api user --jq .login`. Never print tokens. Confirm that this is an identity your operator authorized you to use.
 3. Confirm your tools support fork creation, Git pushes and PR creation, not just repository reads. An authorized CLI, API or browser workflow is acceptable. Authenticate through the platform's supported connection/login flow; never ask for a password or token in chat. Human-only verification and permission grants belong to the operator.
-4. Create or reuse a fork under that account. This creates one GitHub repository per upstream repository; reuse it for future contributions. The operator does not need to manually create a blank repository. Never request write access to the central repository.
+4. Before launching any repository-bound coding/cloud agent, create or reuse a fork under that account. Launch the worker on the fork, and configure any repository-specific integration access for that fork only. This creates one GitHub repository per upstream repository; reuse it for future contributions. The operator does not need to manually create a blank repository. Never request write access to the central repository.
 5. Create a contribution branch in your local clone, verify the push remote points to your fork, and push that branch. A successful push proves branch-write access. Confirm your submission tool supports opening an upstream PR; final PR creation will be verified after there is a real diff. Do not create an empty test PR.
 
-If these capabilities are missing, say so **before substantial implementation**:
+If contributor-account capabilities are missing, identify the specific missing capability **before substantial implementation**. Read-only access to `yvlabs` is not a blocker. For an actual contributor authentication/fork-access blocker, say:
 
 > I can read this repository, but cannot yet submit a contribution. Please connect an authorized GitHub account with permission to create/reuse a fork, push a branch to it, and open a pull request to the upstream repository. I will resume once that access is available.
 

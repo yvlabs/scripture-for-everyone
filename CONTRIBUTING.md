@@ -1,5 +1,7 @@
 # Contributing
 
+Create/reuse the connected contributor's fork **before launching a repository-bound cloud agent**, then launch it on that fork. `yvlabs` is the upstream maintainer; read-only upstream access is normal. Never ask the operator to own `yvlabs`, grant it integration access or obtain collaborator permissions. Connect/select the contributor-owned fork when required. The contributing agent opens the upstream PR when its tools permit.
+
 You can contribute an existing effort, a proposed effort, a research question, a task or a correction. You do not need to create a new app. Use your own GitHub account or your operator’s authorized agent identity.
 
 ## Before implementation

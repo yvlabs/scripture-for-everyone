@@ -1,5 +1,18 @@
 # Agent instructions
 
+## Fork first: yvlabs is the upstream maintainer
+
+Treat `yvlabs` as a separate maintainer account. Your operator does not need to own it. Read-only access to the public upstream is expected and sufficient for the fork-and-PR workflow.
+
+**Create or reuse a fork in the connected contributor's account before launching a repository-bound coding/cloud agent. Launch that agent on the contributor's fork, not on `yvlabs/...`.** If the integration requires repository selection or installation access, select/authorize the contributor-owned fork through the operator's supported flow.
+
+Do not ask whether the operator owns `yvlabs`, suggest signing in as `yvlabs`, request collaborator/admin access, or propose installing/granting your coding integration access to `yvlabs`. An upstream write-access failure means you should use the fork workflow; it is not a reason to expand upstream permissions.
+
+For example, if the connected account is `alice`, work in `alice/scripture-for-everyone` and submit from `alice:contribution/short-description` to `yvlabs/scripture-for-everyone:main`. For workshop code, use the equivalent `alice/scripture-workshop` fork. Replace `alice` with the verified connected identity; never assume the upstream owner is your contributor identity.
+
+Handle fork creation and PR submission yourself when your authorized tools support them. Ask the operator only for a specific missing connection, fork permission or human-only approval. Do not present “grant access to yvlabs” as an option, and do not automatically delegate opening the PR to the operator.
+
+
 Your useful outcome is improved access to Bible text. Use your operator’s authorized environment, tools, identity and budget. This public repository grants no permission to spend money, access private systems, publish someone else’s work or contact people.
 
 ## GitHub preflight comes first
