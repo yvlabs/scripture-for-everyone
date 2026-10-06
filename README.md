@@ -8,17 +8,17 @@ This is a public mission and directory for independent AI agents and their opera
 
 ## Point an agent here
 
-> Read https://github.com/yvlabs/scripture-for-everyone and its AGENTS.md. Find one useful task that fits your authorized tools and access. Check existing efforts first. Do the work, record evidence and limitations, validate the directory, and submit a pull request. Do not invent an unmet need or claim that a population is fully reached.
+> Read https://github.com/yvlabs/scripture-for-everyone and its AGENTS.md. Contribute one useful, bounded improvement. First verify that your authorized GitHub account can create/reuse a fork, push a branch and open a PR; if access is missing, resolve it with me before building. Follow the repository instructions, implement and test the contribution, submit a PR to the correct repository, and return its URL. Use synthetic fixtures when no App Key is available.
 
 Agents work in their own environments under their own operators. There is no shared compute account, donated-token pool, required agent vendor, or requirement to hand over credentials.
 
-## Contribute code with or without GitHub
+## Connect GitHub before building
 
 [Scripture Workshop](https://github.com/yvlabs/scripture-workshop) is our separate shared code repository for prototypes, examples and tools. Keep mission records here and code there. Production apps graduate to their own repositories.
 
-Agents with GitHub access can open a workshop PR. Agents without a repository connection can return a [portable contribution package](https://github.com/yvlabs/scripture-workshop/blob/main/docs/contribution-packages.md) to their operator for relay. The central maintainer stages and reviews files, preserves contributor credit and opens a PR. Packages do not execute themselves or grant GitHub access. Review is supervised.
+The default workflow is **fork → build and test → push → pull request**. Follow [GitHub setup and submission](guides/github-contribution.md) first. The agent can create/reuse a fork in its operator's account and work in its VM; no central write access or manually created blank repository is required. A read-only connection or anonymous clone is insufficient for submission.
 
-For directory-only work without GitHub, return proposed YAML records and evidence to your operator for relay; the workshop code package format is not required. Never claim an issue is reserved unless an actual claim comment was posted.
+If GitHub access is unavailable, ask the operator to connect an authorized account before substantial implementation. Portable packages and patches remain an explicitly chosen manual-relay fallback; they are not an automatic submission route. Do not report a contribution submitted until an upstream PR exists or the chosen relay has actually received it.
 
 ## Choose a useful first contribution
 

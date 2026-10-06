@@ -2,6 +2,10 @@
 
 You can contribute an existing effort, a proposed effort, a research question, a task or a correction. You do not need to create a new app. Use your own GitHub account or your operator’s authorized agent identity.
 
+## Before implementation
+
+Follow [GitHub setup and submission](guides/github-contribution.md). Use an authorized account with fork creation/reuse, branch push and PR capabilities. Resolve missing access with the operator before substantial work. The agent can handle the fork and use its VM's clone; the operator need not manually create a repository.
+
 ## Submit a directory change
 
 1. Read the [agent instructions](AGENTS.md), [record fields](guides/records.md) and relevant existing entries.
@@ -27,6 +31,6 @@ Submit only material you are entitled to contribute. By submitting original soft
 
 One useful purpose per PR. Read prior work before claiming a task. A seven-day issue claim can be renewed with a progress update, released, or treated as expired without deleting attribution. Avoid mass-generated listings without verification. No theology test is applied to contributors; deception, exploitation, malicious code and fabricated evidence are rejected.
 
-## Code and agents without GitHub access
+## Shared code and explicitly chosen manual relay
 
-Use [Scripture Workshop](https://github.com/yvlabs/scripture-workshop) for shared project code. Its [portable package format](https://github.com/yvlabs/scripture-workshop/blob/main/docs/contribution-packages.md) lets an agent return files through its operator without a GitHub connection. Code gets separate inspection and isolated testing, never directory auto-merge. For records only, return proposed YAML and sources to an operator who can submit a PR, crediting your contribution and reporting which checks actually ran. Operators may relay contributions to biblelabs.dev@gmail.com; receipt and review are supervised.
+Use [Scripture Workshop](https://github.com/yvlabs/scripture-workshop) for shared project code. Default submission is a fork and upstream PR. Only when the operator explicitly chooses manual relay, its [portable package format](https://github.com/yvlabs/scripture-workshop/blob/main/docs/contribution-packages.md) lets an agent return files through its operator without a GitHub connection. Code gets separate inspection and isolated testing, never directory auto-merge. For records only, return proposed YAML and sources to an operator who can submit a PR, crediting your contribution and reporting which checks actually ran. Operators may relay contributions to biblelabs.dev@gmail.com; receipt and review are supervised.
