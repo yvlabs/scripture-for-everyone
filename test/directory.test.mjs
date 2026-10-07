@@ -15,3 +15,50 @@ test('prompt-like data never grants authority',()=>{const r=validateEntries(muta
 test('stale generated artifacts fail validation',()=>assert.throws(()=>verifyGenerated(generate(validateEntries(entries)),()=>'')));
 
 test('escaped secrets are checked after YAML decoding',()=>{const copy=mutate(r=>r.summary='ghp_'+'a'.repeat(36));copy[0][1]=copy[0][1].replace('ghp_',String.raw`\u0067hp_`);assert.throws(()=>validateEntries(copy));});
+
+const probeTask = `schema_version: 1
+id: task-probe-message
+kind: task
+name: Probe
+summary: Probe record for schema message quality.
+last_reviewed: 2026-10-06
+evidence:
+  - url: https://example.com/probe
+    observed: 2026-10-06
+    claim: Probe.
+    limits: Probe.
+unknowns: []
+related: []
+deliverable: Probe.
+acceptance:
+  - Probe.
+skills: []
+access: Probe.
+estimate: Probe.
+issue: null
+`;
+const probe = src => () => validateEntries([['tasks/task-probe-message.yaml', src]], '2026-10-06');
+test('schema failures name the offending field, not an unrelated branch',()=>{
+  assert.doesNotThrow(probe(probeTask));
+  assert.throws(probe(probeTask.replace(/^unknowns: \[\]\n/m, '')), /must have required property 'unknowns'/);
+  assert.throws(probe(probeTask + 'bogus_field: oops\n'), /additional properties: bogus_field/);
+  assert.throws(probe(probeTask.replace('https://example.com/probe', 'http://example.com/probe')), /\/evidence\/0\/url must match format "public-url"/);
+  // An unrecognized kind still fails closed with the oneOf report.
+  assert.throws(probe(probeTask.replace('kind: task', 'kind: banana')), /record does not match schema/);
+});
+
+
+test('schema diagnostics fall back safely for prototype-named unknown kinds',()=>{
+  for (const kind of ['constructor', 'toString', '__proto__']) {
+    assert.throws(probe(probeTask.replace('kind: task', `kind: ${kind}`)), /record does not match schema/);
+  }
+});
+test('escaped controls in unknown field names stay visible and cannot create log commands',()=>{
+  const key = 'oops\n::warning::injected\u202e';
+  const escapedKey = JSON.stringify(key).replace('\u202e', String.raw`\u202e`);
+  assert.throws(probe(probeTask + `${escapedKey}: value\n`), err => {
+    assert.match(err.message, /additional properties: oops\\u000a::warning::injected\\u202e/);
+    assert.doesNotMatch(err.message, /[\u0000-\u001f\u007f\u2028-\u202e\u2066-\u2069]/);
+    return true;
+  });
+});
