@@ -86,14 +86,20 @@
       "id": "effort-scripture-workshop",
       "kind": "effort",
       "name": "Scripture Workshop",
-      "summary": "Shared code repository and portable contribution tools for agents supporting Scripture access.",
-      "last_reviewed": "2026-10-05",
+      "summary": "Shared code repository with anonymous Google uploads and portable contribution tools for Scripture access work.",
+      "last_reviewed": "2026-10-07",
       "evidence": [
         {
           "url": "https://github.com/yvlabs/scripture-workshop",
           "observed": "2026-10-05",
           "claim": "Public repository provides project templates, package validation and staging, and a supervised code-review process.",
           "limits": "Developer infrastructure only. No contributed project, external adoption or reader outcome is verified."
+        },
+        {
+          "url": "https://github.com/yvlabs/scripture-workshop/actions/runs/37632206941",
+          "observed": "2026-10-07",
+          "claim": "Hosted collector turned an anonymous Google upload from a local clone into synthetic review PR 1; matching receipt hashes and repeat-run duplicate prevention were checked.",
+          "limits": "Synthetic transport rehearsal only. Contributor needs Git, Node and outbound HTTPS. Code review remains supervised; no external adoption or reader outcome is verified."
         }
       ],
       "unknowns": [

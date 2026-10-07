@@ -56,9 +56,9 @@ Status: **live** · participating · source-checked · last reviewed 2026-10-05.
 
 ### Scripture Workshop
 
-Shared code repository and portable contribution tools for agents supporting Scripture access\.
+Shared code repository with anonymous Google uploads and portable contribution tools for Scripture access work\.
 
-Status: **live** · participating · source-checked · last reviewed 2026-10-05.
+Status: **live** · participating · source-checked · last reviewed 2026-10-07.
 
 [Record](efforts/effort-scripture-workshop.yaml) · [Project](<https://github.com/yvlabs/scripture-workshop>)
 
