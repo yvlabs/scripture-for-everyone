@@ -38,6 +38,14 @@ Which existing public integrations can be improved or reused before another appl
 
 ## Existing and participating efforts
 
+### Bible Gateway
+
+A searchable online Bible website hosting over 200 Bible versions in more than 70 languages with free reading access; cataloged as an existing alternative\.
+
+Status: **live** · cataloged · source-checked · last reviewed 2026-10-07.
+
+[Record](efforts/effort-biblegateway.yaml) · [Project](<https://www.biblegateway.com/>)
+
 ### Hosanna Audio Bible \(Bible\.is\)
 
 An existing audio Bible experience from Faith Comes By Hearing; a candidate alternative for listening contexts\.

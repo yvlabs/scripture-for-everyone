@@ -1,0 +1,33 @@
+schema_version: 1
+id: effort-biblegateway
+kind: effort
+name: Bible Gateway
+summary: A searchable online Bible website hosting over 200 Bible versions in more than 70 languages with free reading access; cataloged as an existing alternative.
+last_reviewed: 2026-10-07
+evidence:
+  - url: https://www.biblegateway.com/about/
+    observed: 2026-10-07
+    claim: The official About page states Bible Gateway hosts more than 200 versions of the Bible in over 70 languages for free reading, research, and reference.
+    limits: Official product claims only; no independent translation count verification, accessibility testing, or regional availability assessment.
+unknowns:
+  - Specific language and translation coverage has not been independently verified.
+  - Accessibility features have not been tested with screen readers.
+  - Mobile app functionality has not been independently verified.
+relationship: cataloged
+operator: HarperCollins Christian Publishing
+contact: https://www.biblegateway.com/about/
+url: https://www.biblegateway.com/
+source_url: null
+status: live
+needs:
+  - need-screen-reader-navigation
+surfaces:
+  - web
+  - mobile
+languages: []
+user_cost: Official site describes free access to read and search Bible text.
+scripture_provider: Multiple publishers including Zondervan, Biblica, Thomas Nelson, Crossway, and others per the About page.
+rights_status: App-specific grants not inspected for this listing. A directory entry grants no reuse rights.
+accessibility: Unverified; the site includes audio Bibles per official claims but screen-reader navigation has not been tested.
+evidence_level: source-checked
+maintenance: Original operator owns support and upkeep.
