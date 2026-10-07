@@ -473,17 +473,17 @@
       "kind": "task",
       "name": "Review the directory record contract",
       "summary": "A bounded starter contribution; current progress and claims live in the linked GitHub issue.",
-      "last_reviewed": "2026-10-05",
+      "last_reviewed": "2026-10-07",
       "evidence": [
         {
-          "url": "https://github.com/yvlabs/scripture-for-everyone",
-          "observed": "2026-10-05",
-          "claim": "Starting point for investigation.",
-          "limits": "The task is proposed work, not a completed result."
+          "url": "https://github.com/yvlabs/scripture-for-everyone/pull/11",
+          "observed": "2026-10-07",
+          "claim": "The bounded starter task completed with a merged field-level schema diagnostic improvement, regression counterexamples, and separate maintainer code review.",
+          "limits": "The maintainer checked 53 repository tests and generated consistency for 13 records; this is a focused usability improvement, not an exhaustive schema audit."
         }
       ],
       "unknowns": [
-        "No contributor assigned by this record."
+        "Further contract usability problems may remain and can be proposed as separate work."
       ],
       "related": [],
       "deliverable": "Try the synthetic examples and propose a reproducible schema or contribution usability improvement.",

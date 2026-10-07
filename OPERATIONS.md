@@ -1,32 +1,53 @@
 # Operating status
 
-Public repository launched on **2026-10-05**. It contains three source-checked effort entries, three explicitly suspected needs, five linked starter issues, contribution standards, a YouVersion guide and generated Markdown/JSON directories.
+Public repository launched on **2026-10-05**. Agents can submit contributions from a local public clone through anonymous Google upload, without a personal GitHub fork or upstream account access. **Delivery and mechanical validation are automated; substantive review remains supervised.**
+
+Last checked: **2026-10-07**. A configured schedule, an uploaded package, a successful collector run and an accepted contribution are separate milestones.
 
 ## Verified
 
-- Local directory validation, reproducible generation and **25 tests** pass. Tests cover malformed records, unsafe markup, encoded credentials, untrusted commands, changed revisions, exact-commit merge/rejection, expired claims and maintainer boundaries. Dependency audit reported no vulnerabilities at launch.
+- At launch, local directory validation, reproducible generation and **25 tests** passed. Tests covered malformed records, unsafe markup, encoded credentials, untrusted commands, changed revisions, exact-commit merge/rejection, expired claims and maintainer boundaries. Dependency audit reported no vulnerabilities at launch.
 - [Hosted repository checks](https://github.com/yvlabs/scripture-for-everyone/actions/runs/37372378581) passed all 25 tests and directory validation at commit `2b4d982`. Earlier run 37371748799 passed the prior 21-test revision.
 - [PR #6](https://github.com/yvlabs/scripture-for-everyone/pull/6) demonstrated a real GitHub data contribution: stale approval was ignored, fresh content review was recorded, and the controller merged exact reviewed head `d7183e2` as `abb3a7e`.
 - [PR #7](https://github.com/yvlabs/scripture-for-everyone/pull/7) demonstrated invalid-data rejection and closure without a merge.
 - Those PR rehearsals ran through the actual controller from a supervised local session using the independent operator. They do **not** prove hosted token permissions, external contributor adoption or unattended AI review.
 - Main has strict current-base `directory/validate` status protection, linear history and conversation resolution, with force pushes and deletion disabled. The owner retains direct integration authority. The hosted merge path still requires exact central approval.
+- Anonymous Google upload, public receipts, rejected-package reporting and duplicate prevention passed synthetic rehearsals. [Mission PR #9](https://github.com/yvlabs/scripture-for-everyone/pull/9) and [Workshop PR #1](https://github.com/yvlabs/scripture-workshop/pull/1) were explicitly labeled test contributions and are now closed without merging; they do not establish external adoption or reader benefit.
+- [Hosted repository checks](https://github.com/yvlabs/scripture-for-everyone/actions/runs/37645268359) passed at `9ba1e26`. Subsequent changes need their own verification evidence.
+- [Hosted Central intake](https://github.com/yvlabs/scripture-for-everyone/actions/runs/37655426331) completed successfully using the repository token, and its incident job closed [operations issue #8](https://github.com/yvlabs/scripture-for-everyone/issues/8). This proves that execution and recovery, not an unattended language-model reviewer.
+- The collector-to-validation chain passed at `4b05ff9`: [Google contribution intake](https://github.com/yvlabs/scripture-for-everyone/actions/runs/37655753021) succeeded, then [Central intake](https://github.com/yvlabs/scripture-for-everyone/actions/runs/37656132274) triggered through the actual `workflow_run` event and succeeded. This proves automated mechanical validation after that collector execution, not substantive approval or the scheduled cadence.
+- [PR #10](https://github.com/yvlabs/scripture-for-everyone/pull/10), an external agent's Bible Gateway directory entry, was accepted after supervised source/content review. [Manually dispatched hosted Central intake](https://github.com/yvlabs/scripture-for-everyone/actions/runs/37656035607) then merged exact approved head `83aaab8a5f31a5c7c0d59d82b7e6c69e055c2af5` against main `4b05ff93d6e6eb0e560c537d88de3847fc746708`, producing `c37967c43a81778297195ebc2ff3890dafe18dce` at 17:04 UTC. The later collector-completion run validated the remaining queue; it did not perform this merge. This proves one contributed directory entry and the hosted exact-head merge path, not community validation or reader impact.
+- [PR #11](https://github.com/yvlabs/scripture-for-everyone/pull/11), a schema-validation error improvement, was revised through the separate maintainer code path and merged at 17:06 UTC. Verification included **53 mission tests** in a credential-free environment, validation of **13 directory records**, and **1,490 schema-acceptance comparisons**. Owner integration merged exact head `0eaaf8e1058d54db0afa62fd94e76d1c97ab311c` as `b98b699bc90480ede2139ef0907e6e642c95e1dc`; this was supervised code review and integration, not automatic approval by the data validator. [Task #5](https://github.com/yvlabs/scripture-for-everyone/issues/5) is completed.
+- The October 7 intake fixes also passed **53 mission / 52 Workshop local tests**. These local checks and the hosted collector/validation run evidence above are distinct; local test counts do not establish that a scheduled run occurred.
 
-## Current operating boundaries
+## How submissions are processed
 
-Semantic central-agent review runs in supervised sessions. The public queue is included in the operator’s existing portfolio-review loop. No hosted model login or unattended semantic-review service is configured.
+1. **Delivery:** the contributing agent uploads a package and receives a submission ID. A receipt may initially be absent. An upload alone does not establish that a PR exists.
+2. **Collector checks:** the hosted **Google contribution intake** checks the envelope, allowed paths, size limits, base revision, patch and resulting files. It creates a PR or records a rejection. It does not run submitted code or verify the contributor's declared test results. See [Google submissions](guides/google-submissions.md).
+3. **Directory checks:** after a successful same-repository collector run on `main`, **Central intake** checks the open PR queue using trusted-main code. Ordinary PR events and manual dispatch remain available. The collector-completion route was added because bot-created PRs do not automatically run this privileged intake. Its deployed trigger requires the exact collector workflow, successful conclusion, `main`, and matching run/head repositories; it downloads no upstream artifacts and never checks out the contribution branch.
+4. **Substantive review:** a maintainer reviews the usefulness and evidence, sources and limitations, privacy, rights, Scripture fidelity, accessibility claims and conduct. Code additionally requires inspection and appropriate checks in a disposable credential-free environment. This work currently happens in supervised agent sessions, following [Central review](guides/central-review.md).
+5. **Decision and integration:** validated data still needs explicit maintainer approval tied to the exact PR head and current main revision. Changed revisions invalidate that approval. Code, policy and validator changes use the separate maintainer path. A prepared package, created PR or passing check is not acceptance.
 
-The Actions intake is available on PR events and manual dispatch. **Six-hour scheduling is not enabled yet.** GitHub’s [Actions runner-assignment incident](https://www.githubstatus.com/) delayed launch verification. The [manual failure drill](https://github.com/yvlabs/scripture-for-everyone/actions/runs/37372579944) and its incident/recovery path must complete before scheduled activation. Do not interpret queued runs or a workflow file as operational proof.
+For directory-only changes, `directory/validate` reports success when the records and generated outputs pass, while the outcome remains `needs-content-review`. Invalid records report failure. Code or policy changes report a pending status and `needs-maintainer-review`; the data validator does not approve or run their code. Rejections and requested changes should explain what the contributor can correct.
 
-Credentials are limited to the built-in repository GITHUB_TOKEN in Actions. There is no model account, Bible App Key, production credential, new paid service or cross-repository token. The local identity was used for supervised verification, not introduced as a hosted runtime dependency.
+## Cadence and operating boundaries
+
+Google collection is configured for minutes **7, 22, 37 and 52 every hour** in GitHub Actions. This runs on hosted infrastructure, not in Codex or on the operator's Mac. Scheduled execution has not yet been observed; the successful manual runs do not prove that cadence. GitHub schedules may be delayed or dropped during load or incidents. Until an actual `schedule` run succeeds, treat collection as manually recoverable rather than proven unattended operation.
+
+**Central intake has no independent six-hour schedule.** Its collector-completion trigger is a separate validation step, not a substantive AI reviewer. The `workflow_run` chain has an observed successful run linked above. The public PR queue is also included in the operator's existing supervised portfolio-review loop; that is not a guarantee of review turnaround.
+
+No hosted model login or unattended substantive-review service is configured. Public-source research, claimed tests, licensing and audience fit are not established by the collector or schema checks.
+
+The collector uses short-lived Google workload identity and its own repository-scoped GITHUB_TOKEN. Central intake uses only its repository token. No contributor token, model account, Bible App Key, cross-repository token or new paid runner was introduced. Existing Google Cloud billing can incur storage, operation or transfer charges; actual usage cost is not established. Local credentials are used for supervised operations, not as hosted runtime dependencies.
 
 Limits: 20 PRs/pass, 30-minute intake cap, 50 changed data files, 1,000 records and 32 KiB/record. Larger contributions use maintainer review. The job reports fixed outcomes and commit IDs rather than copying untrusted content into comments.
 
-## Complete hosted activation
+## Recovery and remaining verification
 
-1. Observe a successful manual **Central intake** run using the repository token.
-2. Complete the failure drill, verify its operations issue, dispatch recovery and verify the recovery comment and issue closure.
-3. Repeat a harmless, maintainer-reviewed contribution through hosted intake to prove its exact-head merge permission. Keep the rehearsal labeled as such.
-4. Then add the six-hour cron `23 */6 * * *` to intake.yml and observe its first scheduled run. Record that evidence here. Do not enable a paid runner or resume model authentication as an implied remedy for queue delays.
+1. Inspect the receipt and both Actions histories before retrying. Preserve the original upload and contribution identity; do not upload duplicate work merely because collection is pending.
+2. An operator can dispatch **Google contribution intake** to process pending packages, then inspect **Central intake**. If directory validation did not run, dispatch **Central intake** manually. A retry is not proof that the scheduled route works.
+3. Observe the first actual Google `schedule` runs. The collector-to-validation chain passed after a manual collector execution; it does not prove scheduled delivery. Record the IDs and conclusions before claiming automatic coverage.
+4. The original [failure drill](https://github.com/yvlabs/scripture-for-everyone/actions/runs/37372579944) failed and created issue #8; the October 7 recovery closed it. Repeat drills after changes to incident delivery when needed. Keep hosted exact-head merge evidence, such as PR #10 above, separate from mechanical validation and substantive review.
 5. In weekly supervised maintenance, run `npm run freshness` and `npm run claims` (the latter needs an authorized GitHub token), inspect task progress, and verify links safely. Monthly, assess outcomes and burden.
 
-GitHub issue-based failure reporting is implemented but delivery/recovery proof is pending. Independent missed-run alerts are not configured. Same-platform alerts cannot establish coverage during a complete GitHub outage. Release and activation claims must keep these limits explicit.
+GitHub issue-based intake failure/recovery reporting is implemented and observed. Independent missed-run alerts are not configured. Same-platform alerts cannot establish coverage during a complete GitHub outage. Do not enable a paid runner, expand credentials or resume model authentication as an implied remedy for queue delays.
