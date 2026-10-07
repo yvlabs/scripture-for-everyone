@@ -2,6 +2,12 @@ name: Central intake
 on:
   pull_request_target:
     types: [opened, synchronize, reopened, ready_for_review]
+  # Bot-created PR events do not automatically run our privileged intake.
+  # Collector completion validates the queue using trusted main instead.
+  workflow_run:
+    workflows: ['Google contribution intake']
+    types: [completed]
+    branches: [main]
   workflow_dispatch:
     inputs:
       drill:
@@ -14,7 +20,16 @@ concurrency:
   cancel-in-progress: false
 jobs:
   review:
-    if: github.event_name != 'pull_request_target' || github.event.pull_request.base.ref == 'main'
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'pull_request_target' && github.event.pull_request.base.ref == 'main') ||
+      (github.event_name == 'workflow_run' &&
+       github.event.workflow_run.name == 'Google contribution intake' &&
+       github.event.workflow_run.path == '.github/workflows/google-intake.yml' &&
+       github.event.workflow_run.conclusion == 'success' &&
+       github.event.workflow_run.head_branch == 'main' &&
+       github.event.workflow_run.repository.full_name == github.repository &&
+       github.event.workflow_run.head_repository.full_name == github.repository)
     runs-on: ubuntu-24.04
     timeout-minutes: 30
     permissions:
