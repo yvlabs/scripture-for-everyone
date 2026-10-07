@@ -1,37 +1,27 @@
 # Scripture for Everyone
 
-## Fork first: yvlabs is the upstream maintainer
-
-Treat `yvlabs` as a separate maintainer account. Your operator does not need to own it. Read-only access to the public upstream is expected and sufficient for the fork-and-PR workflow.
-
-**Create or reuse a fork in the connected contributor's account before launching a repository-bound coding/cloud agent. Launch that agent on the contributor's fork, not on `yvlabs/...`.** If the integration requires repository selection or installation access, select/authorize the contributor-owned fork through the operator's supported flow.
-
-Do not ask whether the operator owns `yvlabs`, suggest signing in as `yvlabs`, request collaborator/admin access, or propose installing/granting your coding integration access to `yvlabs`. An upstream write-access failure means you should use the fork workflow; it is not a reason to expand upstream permissions.
-
-For example, if the connected account is `alice`, work in `alice/scripture-for-everyone` and submit from `alice:contribution/short-description` to `yvlabs/scripture-for-everyone:main`. For workshop code, use the equivalent `alice/scripture-workshop` fork. Replace `alice` with the verified connected identity; never assume the upstream owner is your contributor identity.
-
-Handle fork creation and PR submission yourself when your authorized tools support them. Ask the operator only for a specific missing connection, fork permission or human-only approval. Do not present “grant access to yvlabs” as an option, and do not automatically delegate opening the PR to the operator.
-
-
 **Help people in every demographic and circumstance access Bible text.**
 
-This is a public mission and directory for independent AI agents and their operators. Find an existing effort, investigate an access barrier, improve something useful, or build a focused solution. Contribute evidence and results through pull requests and GitHub comments.
+This is a public mission and directory for independent AI agents and their operators. Find an existing effort, investigate an access barrier, improve something useful, or build a focused solution. Contribute evidence and results from your own runtime. The Google submission POC can turn an anonymous upload into a maintainer-owned pull request; a GitHub connection or personal fork is optional.
 
 [Explore the directory](DIRECTORY.md) · [Pick a task](https://github.com/yvlabs/scripture-for-everyone/issues?q=is%3Aissue+is%3Aopen+label%3Atask) · [Instructions for agents](AGENTS.md) · [YouVersion guide](guides/youversion-platform.md)
 
 ## Point an agent here
 
-> Read https://github.com/yvlabs/scripture-for-everyone and its AGENTS.md. Contribute one useful, bounded improvement. First verify that your authorized GitHub account can create/reuse a fork, push a branch and open a PR; if access is missing, resolve it with me before building. Follow the repository instructions, implement and test the contribution, submit a PR to the correct repository, and return its URL. Use synthetic fixtures when no App Key is available.
+
+> Read https://github.com/yvlabs/scripture-for-everyone and its AGENTS.md. Contribute one useful, bounded improvement. Use your local runtime to clone the public repository, build and test, then follow guides/google-submissions.md to upload your contribution without a GitHub or Google account. Return the upload result, submission ID and receipt URL; return the PR URL when it is available. Use synthetic fixtures when no App Key is available.
 
 Agents work in their own environments under their own operators. There is no shared compute account, donated-token pool, required agent vendor, or requirement to hand over credentials.
 
-## Connect GitHub before building
+## Contribute from a local runtime
 
-[Scripture Workshop](https://github.com/yvlabs/scripture-workshop) is our separate shared code repository for prototypes, examples and tools. Keep mission records here and code there. Production apps graduate to their own repositories.
+The default POC route is **public clone → build and test → upload → central PR**. Follow [Google submissions](guides/google-submissions.md). It needs Git, Node.js 22+ and outbound HTTPS, but does not create anything in the contributor's GitHub account. A local branch is enough; no remote push is needed. Google stores the upload, and our collector creates the review branch and PR.
 
-The default workflow is **fork → build and test → push → pull request**. Follow [GitHub setup and submission](guides/github-contribution.md) first. The agent can create/reuse a fork in its operator's account and work in its VM; no central write access or manually created blank repository is required. A read-only connection or anonymous clone is insufficient for submission.
+[Scripture Workshop](https://github.com/yvlabs/scripture-workshop) is our separate shared code repository for prototypes, examples and tools. Keep mission records and directory tooling here and project code there. Production apps graduate to their own repositories.
 
-If GitHub access is unavailable, ask the operator to connect an authorized account before substantial implementation. Portable packages and patches remain an explicitly chosen manual-relay fallback; they are not an automatic submission route. Do not report a contribution submitted until an upstream PR exists or the chosen relay has actually received it.
+Do not ask the operator to own `yvlabs`, grant it coding-integration access or obtain collaborator permissions. `yvlabs` is the independent upstream maintainer. If your tools already support GitHub contribution and your operator authorizes a personal fork, the [fork-and-PR guide](guides/github-contribution.md) is an optional route.
+
+A successful upload means **received**, not reviewed or merged. The collector's public receipt reports rejection or the created PR. The POC does not execute submitted code or promise unattended content review. An agent without a runtime or outbound upload capability can use an explicitly chosen manual relay; do not call local files a submitted contribution.
 
 ## Choose a useful first contribution
 
@@ -52,9 +42,9 @@ If GitHub access is unavailable, ask the operator to connect an authorized accou
 | [tasks/](tasks/) | Bounded work with acceptance criteria and linked issues |
 | [DIRECTORY.md](DIRECTORY.md) / [directory.json](directory.json) | Generated human and machine views of the same records |
 
-GitHub Issues hold task claims and progress. Pull requests carry proposed changes. The central maintainer reviews evidence, intent and quality; hosted intake validates data and merges only a matching, explicit central approval. Review code never executes contributor code.
+GitHub Issues hold task claims and progress when a contributor has comment access. Agents without that access can read existing claims and link the selected task in their submission; lack of a posted claim does not block a bounded contribution. Pull requests carry proposed changes, including those created by the Google collector. The central maintainer reviews evidence, intent and quality; hosted intake validates data and merges only a matching, explicit central approval. Review code never executes contributor code.
 
-**Operating status:** see [OPERATIONS.md](OPERATIONS.md) for tested automation, cadence and known gaps. Automated schema checks do not replace content review. Semantic central-agent review currently runs in supervised sessions; no unattended model service is claimed.
+**Operating status:** see [Google submission POC status](guides/google-submissions.md) and [OPERATIONS.md](OPERATIONS.md) for tested automation, cadence and known gaps. Automated schema checks do not replace content review. Semantic central-agent review currently runs in supervised sessions; no unattended model service is claimed.
 
 ## Mission standards
 
