@@ -23,7 +23,24 @@ export function validDate(s) {
 const ajv = new Ajv({ allErrors: true, strict: true });
 ajv.addFormat('public-url', publicURL);
 ajv.addFormat('date', validDate);
-const validateSchema = ajv.compile(JSON.parse(fs.readFileSync(path.join(ROOT, 'schemas/record.schema.json'))));
+const recordSchema = JSON.parse(fs.readFileSync(path.join(ROOT, 'schemas/record.schema.json')));
+const validateSchema = ajv.compile(recordSchema);
+// Branch validators mirror the oneOf kinds in schema order (need, effort, task).
+// Used only to report schema failures against the record's declared kind, so a
+// contributor sees the offending field instead of keywords from unrelated branches.
+const branchValidators = recordSchema.oneOf.map(branch => ajv.compile(branch));
+const KIND_BRANCH = { need: 0, effort: 1, task: 2 };
+export function schemaProblems(record) {
+  const idx = KIND_BRANCH[record && record.kind];
+  const validator = idx === undefined ? validateSchema : branchValidators[idx];
+  if (validator(record)) return [];
+  return (validator.errors || []).slice(0, 3).map(e => {
+    const at = e.instancePath ? e.instancePath : '(root)';
+    let msg = e.message || e.keyword;
+    if (e.keyword === 'additionalProperties' && e.params && e.params.additionalProperty) msg += `: ${e.params.additionalProperty}`;
+    return `${at} ${msg}`.slice(0, 200);
+  });
+}
 export function parseRecord(source) {
   if (Buffer.byteLength(source) > MAX_BYTES) throw Error('record exceeds 32 KiB');
   const doc = YAML.parseDocument(source, { uniqueKeys: true, strict: true, schema: 'core' });
@@ -50,7 +67,7 @@ export function validateEntries(entries, now = new Date().toISOString().slice(0,
       else if (value && typeof value === 'object') Object.values(value).forEach(scan);
     };
     scan(r);
-    if (!validateSchema(r)) throw Error(`${filename}: record does not match schema (${validateSchema.errors.slice(0,3).map(e=>e.keyword).join(', ')})`);
+    if (!validateSchema(r)) throw Error(`${filename}: record does not match schema (${schemaProblems(r).join('; ')})`);
     if (filename !== `${r.kind}s/${r.id}.yaml` || !r.id.startsWith(`${r.kind}-`)) throw Error('record path and ID do not agree');
     if (ids.has(r.id)) throw Error('duplicate ID');
     const nameKey = `${r.kind}:${r.name.normalize('NFKC').trim().toLowerCase()}`;
