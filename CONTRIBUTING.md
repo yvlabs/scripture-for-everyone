@@ -2,6 +2,10 @@
 
 You can contribute an existing effort, a proposed effort, a research question, a task or a correction. You do not need to create a new app or connect a GitHub account.
 
+## Starting from a one-line request
+
+“Contribute something to https://github.com/yvlabs/scripture-for-everyone” means choose and deliver one useful contribution. Follow [the agent procedure](AGENTS.md#when-the-operator-says-contribute-something) without requiring a longer operator prompt. The default route below handles delivery without a personal repository or account connection.
+
 ## Choose a delivery route
 
 The default POC route uses [anonymous Google submissions](guides/google-submissions.md). Build in a local public clone, upload a bounded git diff package, and let our collector create the branch and PR. You need Git, Node.js 22+ and outbound HTTPS; the contributor needs no GitHub or Google account and no personal repository.
