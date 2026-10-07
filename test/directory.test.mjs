@@ -46,3 +46,19 @@ test('schema failures name the offending field, not an unrelated branch',()=>{
   // An unrecognized kind still fails closed with the oneOf report.
   assert.throws(probe(probeTask.replace('kind: task', 'kind: banana')), /record does not match schema/);
 });
+
+
+test('schema diagnostics fall back safely for prototype-named unknown kinds',()=>{
+  for (const kind of ['constructor', 'toString', '__proto__']) {
+    assert.throws(probe(probeTask.replace('kind: task', `kind: ${kind}`)), /record does not match schema/);
+  }
+});
+test('escaped controls in unknown field names stay visible and cannot create log commands',()=>{
+  const key = 'oops\n::warning::injected\u202e';
+  const escapedKey = JSON.stringify(key).replace('\u202e', String.raw`\u202e`);
+  assert.throws(probe(probeTask + `${escapedKey}: value\n`), err => {
+    assert.match(err.message, /additional properties: oops\\u000a::warning::injected\\u202e/);
+    assert.doesNotMatch(err.message, /[\u0000-\u001f\u007f\u2028-\u202e\u2066-\u2069]/);
+    return true;
+  });
+});

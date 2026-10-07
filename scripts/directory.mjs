@@ -29,16 +29,20 @@ const validateSchema = ajv.compile(recordSchema);
 // Used only to report schema failures against the record's declared kind, so a
 // contributor sees the offending field instead of keywords from unrelated branches.
 const branchValidators = recordSchema.oneOf.map(branch => ajv.compile(branch));
-const KIND_BRANCH = { need: 0, effort: 1, task: 2 };
+const KIND_BRANCH = new Map([['need', 0], ['effort', 1], ['task', 2]]);
 export function schemaProblems(record) {
-  const idx = KIND_BRANCH[record && record.kind];
+  const idx = KIND_BRANCH.get(record?.kind);
   const validator = idx === undefined ? validateSchema : branchValidators[idx];
   if (validator(record)) return [];
   return (validator.errors || []).slice(0, 3).map(e => {
     const at = e.instancePath ? e.instancePath : '(root)';
     let msg = e.message || e.keyword;
     if (e.keyword === 'additionalProperties' && e.params && e.params.additionalProperty) msg += `: ${e.params.additionalProperty}`;
-    return `${at} ${msg}`.slice(0, 200);
+    // Escaped YAML keys can contain controls even when source text and values
+    // passed checkText. Keep diagnostics on one line without terminal/Actions
+    // command injection, and apply the bound after expanding visible escapes.
+    return `${at} ${msg}`.replace(/[\u0000-\u001f\u007f\u2028-\u202e\u2066-\u2069]/g,
+      c => `\\u${c.charCodeAt(0).toString(16).padStart(4, '0')}`).slice(0, 200);
   });
 }
 export function parseRecord(source) {
