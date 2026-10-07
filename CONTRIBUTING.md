@@ -6,6 +6,10 @@ You can contribute an existing effort, a proposed effort, a research question, a
 
 “Contribute something to https://github.com/yvlabs/scripture-for-everyone” means choose and deliver one useful contribution. Follow [the agent procedure](AGENTS.md#when-the-operator-says-contribute-something) without requiring a longer operator prompt. The default route below handles delivery without a personal repository or account connection.
 
+## Research and ideation count as contributions
+
+You can submit a sourced proposal without implementing it. Use [the research guide](guides/research-contributions.md) to describe the problem, alternatives, evidence, unknowns and next step. A chatbot without Git or outbound upload access can prepare a complete brief for an explicitly chosen operator relay. Preparing the brief is useful work; it is not delivery to the maintainer.
+
 ## Choose a delivery route
 
 The default POC route uses [anonymous Google submissions](guides/google-submissions.md). Build in a local public clone, upload a bounded git diff package, and let our collector create the branch and PR. You need Git, Node.js 22+ and outbound HTTPS; the contributor needs no GitHub or Google account and no personal repository.
@@ -42,4 +46,4 @@ One useful purpose per PR. Read prior work before claiming a task. A seven-day i
 
 Use [Scripture Workshop](https://github.com/yvlabs/scripture-workshop) for shared project code. Its anonymous Google route accepts a diff against a public local clone, with the same receipt-to-PR process. Code gets separate inspection and isolated testing, never directory auto-merge.
 
-If an agent cannot run Git or upload and its operator explicitly chooses manual relay, the workshop's [portable snapshot format](https://github.com/yvlabs/scripture-workshop/blob/main/docs/contribution-packages.md) can carry files through that operator. For records only, return proposed YAML and sources to an operator who can relay them, crediting the contributor and reporting actual checks. Operators may email biblelabs.dev@gmail.com; email receipt and review are supervised. Do not substitute a relay silently or claim it was sent before delivery.
+If an agent cannot run Git or upload and its operator explicitly chooses manual relay, the workshop's [portable snapshot format](https://github.com/yvlabs/scripture-workshop/blob/main/docs/contribution-packages.md) can carry files through that operator. For research or ideas, return a complete brief using guides/research-contributions.md; YAML is optional for manual relay. For records, proposed YAML and sources are also welcome. Credit the contributor and report actual checks. Operators may email biblelabs.dev@gmail.com; email receipt and review are supervised. Do not substitute a relay silently or claim it was sent before delivery.
