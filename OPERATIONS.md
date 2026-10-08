@@ -32,11 +32,11 @@ For directory-only changes, `directory/validate` reports success when the record
 
 ## Cadence and operating boundaries
 
-Google collection is configured for minutes **7, 22, 37 and 52 every hour** in GitHub Actions. This runs on hosted infrastructure, not in Codex or on the operator's Mac. Scheduled execution has not yet been observed; the successful manual runs do not prove that cadence. GitHub schedules may be delayed or dropped during load or incidents. Until an actual `schedule` run succeeds, treat collection as manually recoverable rather than proven unattended operation.
+Google collection is configured for minutes **7, 22, 37 and 52 every hour** in GitHub Actions. Scheduled execution is now observed: [mission collector 37786182927](https://github.com/yvlabs/scripture-for-everyone/actions/runs/37786182927) and [Workshop collector 37786861150](https://github.com/yvlabs/scripture-workshop/actions/runs/37786861150) succeeded on October 8. Each repository shows four successful scheduled runs since October 7, with observed gaps of several hours. This proves hosted scheduled collection, not the configured fifteen-minute cadence or a delivery-time guarantee. Confirm pending uploads against receipts and manually recover collection when needed.
 
 **Central intake has no independent six-hour schedule.** Its collector-completion trigger is a separate validation step, not a substantive AI reviewer. The `workflow_run` chain has an observed successful run linked above. The public PR queue is also included in the operator's existing supervised portfolio-review loop; that is not a guarantee of review turnaround.
 
-No hosted model login or unattended substantive-review service is configured. Public-source research, claimed tests, licensing and audience fit are not established by the collector or schema checks.
+Daily substantive review is scheduled in the operator’s desktop chat at 9:00 a.m. America/Chicago. It needs the workstation and app running; no workstation-independent model review service is configured. Public-source research, claimed tests, licensing and audience fit are not established by the collector or schema checks.
 
 The collector uses short-lived Google workload identity and its own repository-scoped GITHUB_TOKEN. Central intake uses only its repository token. No contributor token, model account, Bible App Key, cross-repository token or new paid runner was introduced. Existing Google Cloud billing can incur storage, operation or transfer charges; actual usage cost is not established. Local credentials are used for supervised operations, not as hosted runtime dependencies.
 
@@ -46,7 +46,7 @@ Limits: 20 PRs/pass, 30-minute intake cap, 50 changed data files, 1,000 records 
 
 1. Inspect the receipt and both Actions histories before retrying. Preserve the original upload and contribution identity; do not upload duplicate work merely because collection is pending.
 2. An operator can dispatch **Google contribution intake** to process pending packages, then inspect **Central intake**. If directory validation did not run, dispatch **Central intake** manually. A retry is not proof that the scheduled route works.
-3. Observe the first actual Google `schedule` runs. The collector-to-validation chain passed after a manual collector execution; it does not prove scheduled delivery. Record the IDs and conclusions before claiming automatic coverage.
+3. Track actual scheduled collection gaps and inspect pending receipts. Successful scheduled runs are now observed, but the configured fifteen-minute cadence remains unverified; independent missed-run alerts are still absent.
 4. The original [failure drill](https://github.com/yvlabs/scripture-for-everyone/actions/runs/37372579944) failed and created issue #8; the October 7 recovery closed it. Repeat drills after changes to incident delivery when needed. Keep hosted exact-head merge evidence, such as PR #10 above, separate from mechanical validation and substantive review.
 5. In weekly supervised maintenance, run `npm run freshness` and `npm run claims` (the latter needs an authorized GitHub token), inspect task progress, and verify links safely. Monthly, assess outcomes and burden.
 
